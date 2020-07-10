@@ -8,8 +8,6 @@ tags: godaddy wordpress debian linux vmware mariadb
 
 This guide clones a *Wordpress* installation on *GoDaddy* to a development environment on Debian 9.5 Linux and *VMWare*, making it available via a subdomain pointing to the external network's IP address. This allows a *Wordpress* child theme to be developed locally and previewed remotely before being deployed to production.
 
-This process was used to set up [http://dev1.nanobasis.com/wp-admin/](http://dev1.nanobasis.com/wp-admin/).
-
 ### Step 1: Install Debian 9.5 netinst
 
 Complete the following guide: [Install Debian Stretch on VMWare with Custom Iptables NAT]({% post_url 2018-11-09-install-debian-vmware-iptables-nat %})
