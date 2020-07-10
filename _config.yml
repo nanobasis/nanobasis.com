@@ -1,0 +1,48 @@
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: nanobasis
+email: admin@nanobasis.com
+description: >-
+  Full stack software development
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://nanobasis.com"
+twitter_username:
+github_username: nanobasis
+
+future: false
+
+rss: rss
+show_excerpts: true
+
+header_pages:
+ - _pages/projects.md
+ - _pages/contact.md
+
+# Build settings
+markdown: kramdown
+sass:
+  sass_dir: _sass
+  style: compressed
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+include:
+  - _pages
+  - _tags
+
+# Exclude from processing.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.txt
+  - README.md
+  - tags_gen.rb
+
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name

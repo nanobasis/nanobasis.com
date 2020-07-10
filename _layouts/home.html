@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<div class="home">
+  <h1 class="page-heading">
+    {{ page.list_title | default: "Posts" }}
+  </h1>
+
+  {{ content }}
+
+  {%- assign posts = site.posts -%}
+  {% include posts-list-with-tags.html %}
+</div>

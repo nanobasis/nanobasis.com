@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<article class="post">
+
+  <header class="post-header">
+  	<p style="font-size: smaller"><a href="{{ "/projects" | relative_url }}">Projects</a> > {{ page.title }}</p>
+    <hr><br>
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="post-content">
+  	<p>{{ page.desc }}</p>
+  	<p>{%- if page.demo -%}
+      <a href="{{ page.demo }}" title="View live demo for {{ page.title }}" target="_blank">View live demo</a> |
+      {% endif %}
+      <a href="{{ page.src }}" title="View source for {{ page.title }}" target="_blank">View source</a>
+    </p>
+    {{ content }}
+  </div>
+
+</article>

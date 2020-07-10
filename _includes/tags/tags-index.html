@@ -1,0 +1,20 @@
+{%- include tags/tags-sorted.html -%}
+
+{% for sorted_tag in tags %}
+  {% assign items = sorted_tag | split: '###' %}
+  {% assign tag = items[1] | replace: '##', ' ' %}
+
+  <h2 id="{{ tag | slugify }}">
+    <a href="/tags/{{ tag | slugify }}">{{ tag }}</a> ({{ items[2] }})
+  </h2>
+  <ul>
+   {% for post in site.posts %}
+     {% if post.tags contains tag %}
+     <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <small>{{ post.date | date_to_string }}</small>
+     </li>
+     {% endif %}
+   {% endfor %}
+  </ul>
+{% endfor %}

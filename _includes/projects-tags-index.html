@@ -1,0 +1,21 @@
+{% assign targetcollection = site.projects %}
+{%- include tags/tags-from-collection.html -%}
+
+{% for sorted_tech in tags %}
+  {% assign items = sorted_tech | split: '###' %}
+  {% assign tag = items[1] | replace: '##', ' ' %}
+
+  <h2 id="{{ tag | slugify }}">
+    <a href="/projects/tags/{{ tag | slugify }}">{{ tag }}</a> ({{ items[2] }})
+  </h2>
+  <ul>
+   {% for project in site.projects %}
+     {% if project.tags2 contains tag %}
+     <li>
+      <a href="/projects/{{ project.title | slugify }}">{{ project.title }}</a>
+      <small>{{ project.date | date_to_string }}</small>
+     </li>
+     {% endif %}
+   {% endfor %}
+  </ul>
+{% endfor %}

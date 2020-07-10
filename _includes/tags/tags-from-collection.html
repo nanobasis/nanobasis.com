@@ -1,0 +1,44 @@
+{% assign alltags = '' %}
+{% for col in targetcollection %}
+  {% assign tagsary = col.tags2 | split: ' ' %}
+  {% for t in tagsary %}
+    {% assign alltags = alltags | append: t | append: ';' %}
+  {% endfor %}
+{% endfor %}
+
+{% assign prevlabel = '' %}
+{% assign labels = '' %}
+{% assign sizes = '' %}
+
+{% assign all = alltags | remove_last: ';' | split: ';' | sort %}
+{% assign totalsize = all.size | plus: -1 %}
+
+{% for i in (0..totalsize) %}
+  {% if all[i] != prevlabel %}
+
+    {% assign count = 0 %}
+    {% for x in (i..all.size) %}
+      {% if all[i] == all[x] %}
+        {% assign count = count | plus: 1 %}
+      {% else %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+
+    {% assign labels = labels | append: all[i] | append: ';' %}
+    {% assign sizes = sizes | append: count | append: ';' %}
+
+    {% assign prevlabel = all[i] %}
+  {% endif %}
+{% endfor %}
+
+{% assign labelary = labels | remove_last: ';' | split: ';' %}
+{% assign sizeary = sizes | remove_last: ';' | split: ';' %}
+
+{% assign labelsize = labelary.size | plus: -1 %}
+{% capture tagstosort %}
+  {% for i in (0..labelsize) %}
+    {{ sizeary[i] | plus: -10000 }}###{{ labelary[i] | replace: ' ', '##' }}###{{ sizeary[i] }}
+  {% endfor %}
+{% endcapture %}
+{% assign tags = tagstosort | split: ' ' | sort %}

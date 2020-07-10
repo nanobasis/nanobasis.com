@@ -1,0 +1,34 @@
+// Migration away from Minima theme
+
+html {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.mar-t1 { margin-top: 1em; }
+.mar-t2 { margin-top: 2em; }
+.mar-t10 { margin-top: 10px; }
+
+.mar-b2 { margin-bottom: 2em; }
+.mar-b5 { margin-bottom: 5px; }
+
+.pure-g > div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.r-box { padding-left: 0; }
+
+// >= 568px .pure-u-sm-*
+@media screen and (min-width: 35.5em) {
+  .r-box { padding-left: 2em; }
+}
+
+// tags
+.tag-link { font-size: 1.8em; }
+.tag-size-5 { font-size: 1.25rem; }
+.tag-size-4 { font-size: 1.10rem; }
+.tag-size-3 { font-size: 0.95rem; }
+.tag-size-2 { font-size: 0.80rem; }
+.tag-size-1 { font-size: 0.65rem; }

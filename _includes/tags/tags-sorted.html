@@ -1,0 +1,6 @@
+{% capture tagsizes %}
+  {% for tag in site.tags %}
+    {{ tag[1].size | plus: -10000 }}###{{ tag[0] | replace: ' ', '##' }}###{{ tag[1].size }}
+  {% endfor %}
+{% endcapture %}
+{% assign tags = tagsizes | split: ' ' | sort %}

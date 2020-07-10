@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<h1 class="page-heading">
+  <a href="/">Posts</a> ({{ page.title | escape | downcase }})
+</h1>
+
+{{ content }}
+
+{%- assign posts = site.tags[page.tag] -%}
+{% include posts-list-with-tags.html %}

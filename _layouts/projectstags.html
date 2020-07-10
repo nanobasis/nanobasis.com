@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<h1 class="page-heading">
+  <a href="/projects">Projects</a> ({{ page.title | escape | downcase }})
+</h1>
+
+{{ content }}
+
+{% include projects-list-with-tags.html %}

@@ -1,0 +1,25 @@
+<div class="pure-g o-box">
+  <div class="pure-u-1 pure-u-sm-15-24">
+    {% include projects-list.html %}
+  </div>
+  <div class="pure-u-1 pure-u-sm-9-24 r-box">
+    <h2 class="mar-b5">Tags <small>(<a href="/projects/tags">view all</a>)</small></h2>
+    {% assign targetcollection = site.projects %}
+    {%- include tags/tags-from-collection.html -%}
+    {% for sorted_tech in tags %}
+      {% assign items = sorted_tech | split: '###' %}
+      {% assign tag = items[1] | replace: '##', ' ' %}
+
+      {% assign count = items[2] | plus: 0 %}
+      {% if count > 5 %}
+        {% assign size = 5 %}
+      {% else %}
+        {% assign size = count %}
+      {% endif %}
+
+      <span class="tag tag-size-{{ size }}">
+        <a class="tag-link" href="/projects/tags/{{ tag | slugify }}">{{ tag }}</a> ({{ size }})
+      </span>
+    {% endfor %}
+  </div>
+</div>

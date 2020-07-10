@@ -1,0 +1,54 @@
+<iframe name="hiddenIf" id="hiddenIf" style="display:none;"></iframe>
+
+<form id="contact-form" target="hiddenIf" onsubmit="submitForm(event);" class="pure-form pure-form-stacked"
+  action="https://docs.google.com/forms/d/e/1FAIpQLSedjbJpryT29PkE6WHU1d2YAEopnYLFlYzoWTLwjoq30k-TdQ/formResponse">
+
+  <div>
+    <label for="entry.629821244">Name</label>
+    <input type="text" name="entry.629821244" class="pure-input-1"
+      placeholder="Enter your name..." value="" required />
+  </div>
+
+  <div class="mar-t1">
+    <label for="entry.2054212185">E-mail Address</label>
+    <input type="email" name="entry.2054212185" class="pure-input-1"
+      placeholder="Enter your email address..." value="" />
+  </div>
+
+  <div class="mar-t1">
+    <label for="entry.692430337">Details</label>
+    <textarea name="entry.692430337" rows="5" class="pure-input-1"
+      placeholder="Start the conversation here..."></textarea>
+  </div>
+
+  <input id="google-recaptcha" type="hidden" name="entry.1654889841" value="" />
+
+  <div class="mar-t1">
+    <input id="button-submit" class="pure-button pure-button-primary" type="submit" value="Submit" disabled />
+  </div>
+
+</form>
+
+<div id="contact-success"></div>
+
+<script type="text/javascript">
+  grecaptcha.ready(function() {
+    grecaptcha.execute('6LewlHcUAAAAANs39m7L77fI8e-QYNREAeSY78fX', {action: 'contact_form'})
+    .then(function(token) {
+      // copy recaptcha response to hidden input
+      document.getElementById('google-recaptcha').value = token;
+      // enable form submit
+      document.getElementById('button-submit').disabled = false;
+    });
+  });
+
+  function submitForm(e) {
+    var msg = 'Thank you for contacting us. We will get back to you shortly.';
+
+    // simulate feel of connection with timeout
+    setTimeout(function() {
+      document.getElementById('contact-form').style.display = "none";
+      document.getElementById('contact-success').innerHTML = msg;
+    }, 300);
+  }
+</script>

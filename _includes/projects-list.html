@@ -1,0 +1,24 @@
+<ul class="post-list">
+  {% assign projects = (site.projects| sort: 'date') | reverse %}
+  {%- for project in projects -%}
+  {% assign projecttags = project.tags2 | split: ' ' %}
+  {% assign pagetag = page.tag | default: '' %}
+  {% if pagetag == "" or projecttags contains pagetag %}
+    <li>
+      <h3>
+        <a class="post-link" href="/projects{{ project.title | slugify | relative_url }}">
+          {{ project.title | escape }}
+        </a>
+      </h3>
+      <p>{{ project.desc }}</p>
+      <p class="mar-b2">
+        <a href="{{ project.src }}" title="View source for {{ project.title }}" target="_blank">View source</a><br />
+        tags:
+        {% for item_tag in projecttags %}
+          <a href="/projects/tags/{{ item_tag | slugify }}">{{ item_tag }}</a>
+        {% endfor %}
+      </p>
+    </li>
+  {% endif %}
+  {%- endfor -%}
+</ul>
