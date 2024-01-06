@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Contact | nanobasis</title>
+<meta property="og:title" content="Contact" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Full stack software development" />
+<meta property="og:description" content="Full stack software development" />
+<link rel="canonical" href="https://nanobasis.com" />
+<meta property="og:url" content="https://nanobasis.com" />
+<meta property="og:site_name" content="nanobasis" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Contact" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Full stack software development","headline":"Contact","url":"https://nanobasis.com"}</script>
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+  <!--<![endif]-->
+  <link rel="stylesheet" href="main.css"><script src='https://www.google.com/recaptcha/api.js?render=6LewlHcUAAAAANs39m7L77fI8e-QYNREAeSY78fX'></script>
+  
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">nanobasis</a>
+
+    <nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+          </svg>
+        </span>
+      </label>
+    </nav>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="page">
+  <h1 class="page-heading">
+    Contact
+  </h1>
+
+  <div class="pure-g o-box">
+  <div class="pure-u-1 pure-u-sm-15-24">
+    <iframe name="hiddenIf" id="hiddenIf" style="display:none;"></iframe>
+
+<form id="contact-form" target="hiddenIf" onsubmit="submitForm(event);" class="pure-form pure-form-stacked" action="https://docs.google.com/forms/d/e/1FAIpQLSedjbJpryT29PkE6WHU1d2YAEopnYLFlYzoWTLwjoq30k-TdQ/formResponse">
+
+  <div>
+    <label for="entry.629821244">Name</label>
+    <input type="text" name="entry.629821244" class="pure-input-1" value="" required="" />
+  </div>
+
+  <div class="mar-t1">
+    <label for="entry.2054212185">E-mail</label>
+    <input type="email" name="entry.2054212185" class="pure-input-1" value="" required="" />
+  </div>
+
+  <div class="mar-t1">
+    <label for="entry.692430337">Message</label>
+    <textarea name="entry.692430337" rows="8" class="pure-input-1" required=""></textarea>
+  </div>
+
+  <input id="google-recaptcha" type="hidden" name="entry.1654889841" value="" />
+
+  <div class="mar-t1">
+    <input id="button-submit" class="pure-button pure-button-primary" type="submit" value="Submit" disabled="" />
+  </div>
+
+</form>
+
+<div id="contact-success"></div>
+
+<script type="text/javascript">
+  grecaptcha.ready(function() {
+    grecaptcha.execute('6LewlHcUAAAAANs39m7L77fI8e-QYNREAeSY78fX', {action: 'contact_form'})
+    .then(function(token) {
+      // copy recaptcha response to hidden input
+      document.getElementById('google-recaptcha').value = token;
+      // enable form submit
+      document.getElementById('button-submit').disabled = false;
+    });
+  });
+
+  function submitForm(e) {
+    var msg = 'Thank you for contacting us. We will get back to you shortly.';
+
+    // simulate feel of connection with timeout
+    setTimeout(function() {
+      document.getElementById('contact-form').style.display = "none";
+      document.getElementById('contact-success').innerHTML = msg;
+    }, 300);
+  }
+</script>
+  </div>
+  <div class="pure-u-1 pure-u-sm-9-24 r-box">
+  </div>
+</div>
+
+</div>
+
+      </div>
+    </main>
+</body>
+
+</html>
